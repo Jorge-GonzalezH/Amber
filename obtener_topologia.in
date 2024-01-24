@@ -1,0 +1,17 @@
+# Carga el conjunto de fuerzas (puede variar según tu sistema)
+source leaprc.protein.ff19SB 
+# Reemplaza "archivo.pdb" con el nombre de tu archivo PDB
+pdb = loadPdb reference_frame.pdb                  
+# Archivos de salida de topología (.prmtop) y coordenadas (.inpcrd)
+saveAmberParm pdb topology.prmtop topology.inpcrd  
+quit
+
+# Cargar el conjunto de fuerzas y el archivo PDB de la trayectoria
+source leaprc.protein.ff19SB  # Reemplaza con el conjunto de fuerzas adecuado
+pdb = loadPdb models.pdb  # Reemplaza "models.pdb" con el nombre de tu archivo PDB
+
+# Guardar la topología y las coordenadas en archivos separados
+saveAmberParm pdb topology.prmtop topology.inpcrd
+
+# Salir de tleap
+quit
